@@ -1,5 +1,6 @@
 use crate::prelude::*;
 
+/// Spawns the player object at the given position.
 pub fn spawn_player(ecs : &mut World, pos : Point) {
     ecs.push(
         (

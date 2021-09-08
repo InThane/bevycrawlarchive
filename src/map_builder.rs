@@ -1,6 +1,7 @@
 use crate::prelude::*;
 const NUM_ROOMS: usize = 20;
 
+/// Contains the basic structures for building a map.
 pub struct MapBuilder {
     pub map : Map,
     pub rooms : Vec<Rect>,
@@ -24,7 +25,6 @@ impl MapBuilder {
         mb
     }
 
-    /// # fill
     /// Fills the map with a chosen tile type
     fn fill(
         &mut self,
@@ -33,7 +33,6 @@ impl MapBuilder {
         self.map.tiles.iter_mut().for_each(|t| *t = tile);
     }
 
-    /// # apply_horizontal_tunnel
     /// Make a horizontal tunnel from x1 to x2, at y.
     fn apply_horizontal_tunnel(
         &mut self, 
@@ -49,7 +48,6 @@ impl MapBuilder {
         }
     }
 
-    /// # apply_vertical_tunnel
     /// Make a vertical tunnel from y1 to y2, at x.
     fn apply_vertical_tunnel(
         &mut self, 
@@ -65,7 +63,6 @@ impl MapBuilder {
         }
     }
 
-    /// # build_corridors
     /// Builds corridors between existing rooms.
     fn build_corridors (
         &mut self, 
@@ -88,7 +85,6 @@ impl MapBuilder {
         }
     }
 
-    /// # build_random_rooms
     /// Create a random room and push it into the room collection if it does not collide with an existing room.
     fn build_random_rooms(
         &mut self,

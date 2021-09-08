@@ -1,6 +1,5 @@
 use crate::prelude::*;
 
-/// # Camera
 /// Struct to hold the camera boundary information
 pub struct Camera {
     pub left_x : i32,
@@ -19,6 +18,8 @@ impl Camera {
         }
     }
 
+    /// Keeps the camera centered on the player.
+    /// Call on any activity that could move the player.
     pub fn on_player_move(&mut self, player_position: Point) {
         self.left_x = player_position.x - DISPLAY_WIDTH/2;
         self.right_x = player_position.x + DISPLAY_WIDTH/2;

@@ -1,6 +1,7 @@
 use crate::prelude::*;
 
 #[system]
+/// Renders the map on layer 0
 pub fn map_render(
     #[resource] map: &Map,
     #[resource] camera: &Camera

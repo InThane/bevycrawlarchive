@@ -3,6 +3,7 @@ use crate::prelude::*;
 #[system]
 #[read_component(Point)]
 #[read_component(Render)]
+/// Renders visible entities on layer 1.
 pub fn entity_render(
     ecs: &SubWorld, 
     #[resource] camera: &Camera

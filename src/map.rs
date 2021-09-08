@@ -1,24 +1,20 @@
 use crate::prelude::*;
 
-/// # NUM_TILES
 /// Indicates the maximum number of tiles in a single map
 const NUM_TILES: usize = (SCREEN_WIDTH * SCREEN_HEIGHT) as usize;
 
 #[derive(Clone, Copy, PartialEq)]
-/// # TileType
 /// Enum that contains the tiles used by maps.
 pub enum TileType {
     Wall,
     Floor,
 }
 
-/// # Map
 /// Structure containing a vector of tiles
 pub struct Map {
     pub tiles: Vec<TileType>,
 }
 
-/// # map_idx
 /// Convert x,y to a map index value that works with the Map vector.
 pub fn map_idx(
     x: i32, 
@@ -35,44 +31,6 @@ impl Map {
         }
     }
 
-    /*/// # render
-    /// Renders the map object to the linked BTerm.
-    pub fn render(
-        &self, 
-        ctx: &mut BTerm,
-        camera: &Camera
-    ) {
-        ctx.set_active_console(0);
-        for y in camera.top_y .. camera.bottom_y {
-            for x in camera.left_x .. camera.right_x {
-                if self.in_bounds(Point::new(x, y)) {
-                    let idx = map_idx(x,y);
-                    match self.tiles[idx] {
-                        TileType::Floor => {
-                            ctx.set(
-                                x - camera.left_x, 
-                                y - camera.top_y, 
-                                DF_FG_COLOR, 
-                                DF_BG_COLOR, 
-                                to_cp437('.')
-                            );
-                        }
-                        TileType::Wall => {
-                            ctx.set(
-                                x - camera.left_x,
-                                y - camera.top_y,
-                                DF_FG_COLOR,
-                                DF_BG_COLOR,
-                                to_cp437('#')
-                            );
-                        }
-                    }
-                }
-            }
-        }
-    }*/
-
-    /// # in_bounds
     /// Bounds checker for Map object
     ///
     /// Returns True if in bounds, False if not
@@ -85,7 +43,6 @@ impl Map {
         point.y >= 0 && point.y < SCREEN_HEIGHT
     }
 
-    /// # can_enter_tile
     /// Determines if a tile can be entered.
     pub fn can_enter_tile(
         &self,
@@ -95,7 +52,6 @@ impl Map {
             && self.tiles[map_idx(point.x, point.y)]==TileType::Floor
     }
 
-    /// # try_idx
     /// Returns a map index to the point if the point is valid, otherwise returns none.
     pub fn try_idx(
         &self,
@@ -108,4 +64,3 @@ impl Map {
         }
     }
 }
-
