@@ -35,7 +35,7 @@ impl Map {
         }
     }
 
-    /// # render
+    /*/// # render
     /// Renders the map object to the linked BTerm.
     pub fn render(
         &self, 
@@ -52,8 +52,8 @@ impl Map {
                             ctx.set(
                                 x - camera.left_x, 
                                 y - camera.top_y, 
-                                WHITE, 
-                                BLACK, 
+                                DF_FG_COLOR, 
+                                DF_BG_COLOR, 
                                 to_cp437('.')
                             );
                         }
@@ -61,8 +61,8 @@ impl Map {
                             ctx.set(
                                 x - camera.left_x,
                                 y - camera.top_y,
-                                WHITE,
-                                BLACK,
+                                DF_FG_COLOR,
+                                DF_BG_COLOR,
                                 to_cp437('#')
                             );
                         }
@@ -70,7 +70,7 @@ impl Map {
                 }
             }
         }
-    }
+    }*/
 
     /// # in_bounds
     /// Bounds checker for Map object
