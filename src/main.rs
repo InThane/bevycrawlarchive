@@ -14,8 +14,8 @@ mod prelude {
     pub const SCREEN_HEIGHT: i32 = 50;
     pub const DISPLAY_WIDTH: i32 = SCREEN_WIDTH / 2;
     pub const DISPLAY_HEIGHT: i32 = SCREEN_HEIGHT / 2;
-    pub const DF_FG_COLOR: (u8, u8, u8) = GREEN;
-    pub const DF_BG_COLOR: (u8, u8, u8) = BLACK;
+    pub const DF_FG_COLOR: (u8, u8, u8) = GREEN; // Default foreground color
+    pub const DF_BG_COLOR: (u8, u8, u8) = BLACK; // Default background color
     pub use crate::map::*;
     pub use crate::map_builder::*;
     pub use crate::camera::*;
@@ -26,6 +26,7 @@ mod prelude {
 
 use prelude::*;
 
+/// Contains the ECS structure.
 struct State{
     ecs : World,
     resources : Resources,
