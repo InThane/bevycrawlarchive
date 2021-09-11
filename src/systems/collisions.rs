@@ -4,6 +4,7 @@ use crate::prelude::*;
 #[read_component(Point)]
 #[read_component(Player)]
 #[read_component(Enemy)]
+/// Detects a collision between the player and an enemy, and removes it from the map.
 pub fn collisions(
     ecs: &mut SubWorld,
     commands: &mut CommandBuffer
