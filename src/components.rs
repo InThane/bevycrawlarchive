@@ -10,3 +10,6 @@ pub struct Render {
 #[derive(Clone, Copy, Debug, PartialEq)]
 /// Struct containing data about the player entity.
 pub struct Player;
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Enemy;
